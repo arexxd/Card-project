@@ -38,15 +38,15 @@ public class Deck {
 				cards.add(new Card(ranks[j], suitString, values[j]));
 			}
 		}
+		size = cards.size();
 	}
-
 
 	/**
 	 * Determines if this deck is empty (no undealt cards).
 	 * @return true if this deck is empty, false otherwise.
 	 */
 	public boolean isEmpty() {
-		return size == 0;
+		return cards.size() == 0;
 	}
 
 	/**
@@ -54,7 +54,7 @@ public class Deck {
 	 * @return the number of undealt cards in this deck.
 	 */
 	public int size() {
-		return size();
+		return cards.size();
 	}
 
 	/**
@@ -74,13 +74,10 @@ public class Deck {
 		if (isEmpty()){
 			return null;
 		}
-		else{
 		size--;
 		Card x = cards.get(size);
 		return x;
 		}
-		
-	}
 
 	/**
 	 * Generates and returns a string representation of this deck.

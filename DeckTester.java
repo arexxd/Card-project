@@ -21,12 +21,12 @@ public class DeckTester {
 		System.out.println(newDeck.toString());
 		System.out.println(newDeck.isEmpty());
 		System.out.println(newDeck.size());
-		for(int i = 0; i<5; i++){
+		for(int i = 0; i<newDeck.size(); i++){
 			System.out.println(newDeck.deal());
 		}
 		//after deck is dealt
-		System.out.println(newDeck.toString());
 		System.out.println(newDeck.isEmpty());
+		System.out.println(newDeck.toString());
 		System.out.println(newDeck.size());
 		System.out.println(newDeck.deal());
 	}
