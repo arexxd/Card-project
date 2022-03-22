@@ -20,6 +20,8 @@ public class Deck {
 	 */
 	private int size;
 
+	public char[] toString;
+
 
 	/**
 	 * Creates a new <code>Deck</code> instance.<BR>
