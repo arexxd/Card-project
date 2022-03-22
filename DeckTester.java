@@ -11,7 +11,17 @@ public class DeckTester {
         String[] ranks = {"jack", "queen", "king"};
         String[] suits = {"blue", "red"};
         int[] pointValues = {11, 12, 13};
-        Deck xDeck = new Deck(ranks, suits, pointValues);
-        System.out.println("");
+        Deck newDeck = new Deck(ranks, suits, pointValues);
+		//orig methods
+		System.out.println(newDeck.toString());
+		System.out.println(newDeck.isEmpty());
+		System.out.println(newDeck.size());
+		//card dealing
+		System.out.println(newDeck.deal());
+		System.out.println(newDeck.toString());
+		System.out.println(newDeck.isEmpty());
+		System.out.println(newDeck.size());
+		
+
 	}
 }
