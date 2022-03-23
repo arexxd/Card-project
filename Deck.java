@@ -83,10 +83,10 @@ public class Deck {
 	 *         previously dealt.
 	 */
 	public Card deal() {
-		if (isEmpty()){
+		if (cards.isEmpty()){
 			return null;
 		}
-		size--;
+		size=cards.size()-1;
 		Card x = cards.get(size);
 		return x;
 		}
