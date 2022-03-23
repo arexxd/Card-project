@@ -22,6 +22,10 @@ public class Deck {
 
 	public char[] toString;
 
+	private int[] values;
+
+	private int valueCount;
+
 
 	/**
 	 * Creates a new <code>Deck</code> instance.<BR>
@@ -39,6 +43,7 @@ public class Deck {
 			}
 		}
 		size = cards.size();
+		shuffle();
 	}
 
 	/**
@@ -62,8 +67,15 @@ public class Deck {
 	 * and reset the size to represent the entire deck.
 	 */
 	public void shuffle() {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 4 *** */
-	}
+		//Traverses array from the last position.
+		 for(int k = valueCount - 1; k >= 0; k--) {
+				  int r = (int)(Math.random() * k);    //Randomizes within the array.
+				  int temp = values[r];
+				  values[r] = values[k];
+				  values[k] = temp;         //Replaces value at k with value of the temporary holder.
+			  }
+	   }
+	  
 
 	/**
 	 * Deals a card from this deck.
