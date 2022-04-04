@@ -1,4 +1,8 @@
 import java.util.List;
+
+import javax.lang.model.util.ElementScanner6;
+
+import java.nio.channels.SelectableChannel;
 import java.util.ArrayList;
 
 /**
@@ -54,8 +58,12 @@ public class ElevensBoard extends Board {
 	@Override
 	public boolean isLegal(List<Integer> selectedCards) {
 		if(selectedCards.size()==2){
-			
-		} 
+			return containsPairSum11(selectedCards);
+		} else if (selectedCards.size()==3){
+			return containsJQK(selectedCards);
+		} else{
+			return false;
+		}
 	}
 
 	/**
@@ -68,7 +76,8 @@ public class ElevensBoard extends Board {
 	 */
 	@Override
 	public boolean anotherPlayIsPossible() {
-		return cards.anotherPlayIsPossible();
+		List<Integer> Indexes = cardIndexes();
+		return containsPairSum11(Indexes) || containsJQK(Indexes);
 	}
 
 	/**
@@ -80,12 +89,17 @@ public class ElevensBoard extends Board {
 	 *              contain an 11-pair; false otherwise.
 	 */
 	private boolean containsPairSum11(List<Integer> selectedCards) {
-		for(int sk1 = int, sk1 < selectedCards.size, sk++){
-			int k1 = selectedCards.get(k1).intValue(){
-				
-			}
+		for (int sk1 = 0; sk1 < selectedCards.size(); sk1++) {
+		 int k1 = selectedCards.get(sk1).intValue();
+		 for (int sk2 = sk1 + 1; sk2 < selectedCards.size(); sk2++) {
+		  int k2 = selectedCards.get(sk2).intValue();
+		  if (cardAt(k1).pointValue() + cardAt(k2).pointValue() == 11) {
+		   return true;
+		  }
+		 }
 		}
-	}
+		return false;
+	   }
 
 	/**
 	 * Check for a JQK in the selected cards.
