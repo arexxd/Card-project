@@ -250,6 +250,20 @@ public class ElevensBoard {
 	 *              include a jack, a queen, and a king; false otherwise.
 	 */
 	private boolean containsJQK(List<Integer> selectedCards) {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 9 *** */
+		boolean king = false;
+		boolean queen = false;
+		boolean jack = false;
+		for (int obj : selectedCards){
+			if (cardAt(obj).rank().equals("jack")){
+				return jack = true;
+			}
+			if (cardAt(obj).rank().equals("king")){
+				return king = true;
+			}
+			if (cardAt(obj).rank().equals("queen")){
+				return queen = true;
+			}
+		}
+		return king && jack && queen;
 	}
 }
