@@ -229,7 +229,16 @@ public class ElevensBoard {
 	 */
 	private boolean containsPairSum11(List<Integer> selectedCards) {
 		List<Integer> cIndexes = cardIndexes();
-		for 
+		for (int sk1 = 0; sk1 < selectedCards.size(); sk1++){
+			int k1 = selectedCards.get(sk1).intValue();
+			for(int sk2 = 0; sk2 < selectedCards.size(); sk2++){
+				int k2 = selectedCards.get(sk2).intValue();
+				if (cardAt(k1).pointValue() + cardAt(k2).pointValue() == 11){
+					return true;
+				}
+			}
+		}
+		return false;
 	}
 
 	/**
