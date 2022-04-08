@@ -56,10 +56,10 @@ public class ElevensBoard extends Board {
 		super(BOARD_SIZE, RANKS, SUITS, POINT_VALUES);
 		cards = new Card[BOARD_SIZE];
 		deck = new Deck(RANKS, SUITS, POINT_VALUES);
-		if (I_AM_DEBUGGING) {
-			System.out.println(deck);
-			System.out.println("----------");
-		}
+		//if (I_AM_DEBUGGING) {
+		//	System.out.println(deck);
+		//	System.out.println("----------");
+		//}
 		dealMyCards();
 	}
 
