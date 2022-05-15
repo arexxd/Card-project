@@ -85,10 +85,10 @@ import java.util.ArrayList;
          *              contain an 11-pair; false otherwise.
          */
         private boolean containsPairSum13(List<Integer> selectedCards) {
-            for (int sk1 = 0; sk1 < selectedCards.size(); sk1++) {
-                int k1 = selectedCards.get(sk1).intValue();
-                for (int sk2 = sk1 + 1; sk2 < selectedCards.size(); sk2++) {
-                    int k2 = selectedCards.get(sk2).intValue();
+            for (int s1 = 0; s1 < selectedCards.size(); s1++) {
+                int k1 = selectedCards.get(s1).intValue();
+                for (int s2 = s1 + 1; s2 < selectedCards.size(); s2++) {
+                    int k2 = selectedCards.get(s2).intValue();
                     if (cardAt(k1).pointValue() + cardAt(k2).pointValue() == 13) {
                         return true;
                     }
@@ -109,13 +109,13 @@ import java.util.ArrayList;
             boolean foundJack = false;
             boolean foundQueen = false;
             boolean foundKing = false;
-            for (Integer kObj : selectedCards) {
-                int k = kObj.intValue();
-                if (cardAt(k).rank().equals("jack")) {
+            for (Integer Obj : selectedCards) {
+                int i = Obj.intValue();
+                if (cardAt(i).rank().equals("jack")) {
                     foundJack = true;
-                } else if (cardAt(k).rank().equals("queen")) {
+                } else if (cardAt(i).rank().equals("queen")) {
                     foundQueen = true;
-                } else if (cardAt(k).rank().equals("king")) {
+                } else if (cardAt(i).rank().equals("king")) {
                     foundKing = true;
                 }
             }
